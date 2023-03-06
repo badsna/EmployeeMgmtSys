@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section>
+    <h1>Update User</h1>
+
+    <form th:action="@{/user/teacher}" method="post" th:object="${teacher}">
+        <input type="hidden" name="teacher_id" th:value="${teacher.teacher_id}"/>
+        <div class="mb-3">
+            <label>Enter name</label> <input type="text" name="teacher_name"
+                                             class="form-control" th:value="${teacher.teacher_name}">
+        </div>
+
+        <div class="mb-3">
+            <label>Enter Date of birth </label> <input type="Date"
+                                                       name="dob" class="form-control" th:value="${teacher.dob}">
+        </div>
+
+
+        <div class="mb-3">
+            <label>Enter phone </label> <input type="number"
+                                               name="phone" class="form-control" th:value="${teacher.phone}">
+        </div>
+        <div class="mb-3">
+            <label>Enter email</label> <input type="text" name="email"
+                                              class="form-control" th:value="${teacher.email}">
+        </div>
+        <div class="mb-3">
+            <label>Enter address</label> <input type="text" name="address"
+                                                class="form-control" th:value="${teacher.address}">
+        </div>
+        <button class="btn btn-primary col-md-12">submit</button>
+    </form>
+</section>
+</body>
+</html>

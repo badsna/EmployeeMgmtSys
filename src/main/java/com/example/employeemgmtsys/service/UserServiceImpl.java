@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService{
     public final UserRepository userRepository;
-    public final UserDtlsRequestPojo userDtlsRequestPojo;
+//    public final UserDtlsRequestPojo userDtlsRequestPojo;
     public final ObjectMapper objectMapper;
 
     public UserDtls createUser(UserDtlsRequestPojo userDtlsRequestPojo){

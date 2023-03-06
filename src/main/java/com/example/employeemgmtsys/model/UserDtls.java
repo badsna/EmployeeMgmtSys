@@ -30,4 +30,9 @@ public class UserDtls {
     private String address;
     @Column(name = "qulaification")
     private String qualification;
+    @Column(name = "password")
+    private String password;
+//    @Column(name = "role")
+//    private String role;
+
 }
