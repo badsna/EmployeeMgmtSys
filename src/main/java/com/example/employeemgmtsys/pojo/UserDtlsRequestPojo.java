@@ -1,6 +1,5 @@
 package com.example.employeemgmtsys.pojo;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +18,6 @@ public class UserDtlsRequestPojo {
     private String address;
     private String qualification;
     private String password;
-    //private String role;
+    private String role;
 
 }

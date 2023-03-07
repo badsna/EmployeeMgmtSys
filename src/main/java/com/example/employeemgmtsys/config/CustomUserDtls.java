@@ -1,56 +1,55 @@
-//package com.example.employeemgmtsys.config;
-//
-//import com.example.employeemgmtsys.model.UserDtls;
-//import org.springframework.security.core.GrantedAuthority;
-//import org.springframework.security.core.authority.SimpleGrantedAuthority;
-//import org.springframework.security.core.userdetails.UserDetails;
-//
-//import java.util.Collection;
-//import java.util.HashSet;
-//
-////yata UserDetails vanya prebulit ho
-//public class CustomUserDtls implements UserDetails {
-//    private UserDtls u;
-//
-//    public CustomUserDtls(UserDtls u) {
-////        super();
-//        this.u = u;
-//    }
-//
-//    @Override
-//    public Collection<? extends GrantedAuthority> getAuthorities() {
-//        HashSet<SimpleGrantedAuthority> set=new HashSet<SimpleGrantedAuthority>();
-//        set.add(new SimpleGrantedAuthority(u.getRole()));
-//        return set;
-//    }
-//
-//    @Override
-//    public String getPassword() {
-//        return u.getPassword();
-//    }
-//
-//    @Override
-//    public String getUsername() {
-//        return u.getEmail();
-//    }
-//
-//    @Override
-//    public boolean isAccountNonExpired() {
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean isAccountNonLocked() {
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean isCredentialsNonExpired() {
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean isEnabled() {
-//        return true;
-//    }
-//}
+package com.example.employeemgmtsys.config;
+
+import com.example.employeemgmtsys.model.UserDtls;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+
+//yata UserDetails vanya prebulit ho
+public class CustomUserDtls implements UserDetails {
+    private UserDtls user;
+
+    public CustomUserDtls(UserDtls user) {
+        this.user = user;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(user.getRole());
+        return Arrays.asList(simpleGrantedAuthority);
+    }
+
+    @Override
+    public String getPassword() {
+        return user.getPassword();
+    }
+
+    @Override
+    public String getUsername() {
+        return user.getEmail();
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+}

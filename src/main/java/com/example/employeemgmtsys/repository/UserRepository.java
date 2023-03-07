@@ -7,5 +7,5 @@ public interface UserRepository extends JpaRepository<UserDtls,Integer> {
     public boolean existsByEmail(String email);
     //yesko kaam ne service ma xa
     //already exist vako email id check garna lai
-    public UserDtls findByEmail(String em);
+    public UserDtls findByEmail(String email);
 }

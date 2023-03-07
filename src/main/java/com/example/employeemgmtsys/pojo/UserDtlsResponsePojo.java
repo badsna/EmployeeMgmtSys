@@ -18,7 +18,7 @@ public class UserDtlsResponsePojo {
     private String address;
     private String qualification;
     private String password;
-   // private String role;
+    private String role;
 
 
 }

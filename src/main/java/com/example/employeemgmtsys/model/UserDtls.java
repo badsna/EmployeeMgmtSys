@@ -1,8 +1,11 @@
 package com.example.employeemgmtsys.model;
 
-import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import javax.persistence.*;
+import java.util.Collection;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
@@ -32,7 +35,11 @@ public class UserDtls {
     private String qualification;
     @Column(name = "password")
     private String password;
-//    @Column(name = "role")
-//    private String role;
+
+    //one user can have multiple roles
+    //user sangaii role in retrive garnu parne vayaraw eager rakhya
+
+    @Column(name = "role")
+    private String role;
 
 }
